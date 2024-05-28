@@ -27,12 +27,11 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        primaryColor: Colors.black,
       ),
       darkTheme: ThemeData.dark(),
       themeMode: AppConstants.themeMode,
-      home: HomeScreen(
-        onThemeModeToggled: toggleThemeMode,
-      ),
+      home: HomeScreen(),
     );
   }
 }

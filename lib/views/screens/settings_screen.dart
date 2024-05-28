@@ -3,10 +3,8 @@ import 'package:dars45/views/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatefulWidget {
-  final ValueChanged<bool> onThemeModeToggled;
   const SettingsScreen({
     super.key,
-    required this.onThemeModeToggled,
   });
 
   @override
@@ -22,16 +20,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
         title: const Text("Sozlamalar"),
         centerTitle: true,
       ),
-      drawer: CustomDrawer(
-        onThemeModeToggled: widget.onThemeModeToggled,
-      ),
+      drawer: CustomDrawer(),
       body: ListView(
         children: [
           SwitchListTile(
             title: const Text("Tungi Holat"),
             value: AppConstants.themeMode == ThemeMode.dark,
             onChanged: (value) {
-              widget.onThemeModeToggled(value);
             },
           ),
         ],

@@ -4,10 +4,8 @@ import 'package:dars45/views/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  final ValueChanged<bool> onThemeModeToggled;
   const HomeScreen({
     super.key,
-    required this.onThemeModeToggled,
   });
 
   @override
@@ -22,7 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber,
-        title: const Text("Kompaniyalar"),
+        title: Text(
+          "Kompaniyalar",
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
@@ -46,9 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      drawer: CustomDrawer(
-        onThemeModeToggled: widget.onThemeModeToggled,
-      ),
+      drawer: CustomDrawer(),
       body: ListView.builder(
           padding: const EdgeInsets.all(20),
           itemCount: companiesController.list.length,

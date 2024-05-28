@@ -3,10 +3,8 @@ import 'package:dars45/views/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final ValueChanged<bool> onThemeModeToggled;
   const CustomDrawer({
     super.key,
-    required this.onThemeModeToggled,
   });
 
   @override
@@ -22,9 +20,7 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (ctx) {
-                return HomeScreen(
-                  onThemeModeToggled: onThemeModeToggled,
-                );
+                return HomeScreen();
               }));
             },
             leading: const Icon(Icons.home),
@@ -34,9 +30,7 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (ctx) {
-                return SettingsScreen(
-                  onThemeModeToggled: onThemeModeToggled,
-                );
+                return SettingsScreen();
               }));
             },
             leading: const Icon(Icons.settings),
