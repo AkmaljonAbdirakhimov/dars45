@@ -1,9 +1,14 @@
 import 'package:dars45/controllers/companies_controller.dart';
 import 'package:dars45/views/widgets/add_company_dialog.dart';
+import 'package:dars45/views/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final ValueChanged<bool> onThemeModeToggled;
+  const HomeScreen({
+    super.key,
+    required this.onThemeModeToggled,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -40,6 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.add),
           ),
         ],
+      ),
+      drawer: CustomDrawer(
+        onThemeModeToggled: widget.onThemeModeToggled,
       ),
       body: ListView.builder(
           padding: const EdgeInsets.all(20),
